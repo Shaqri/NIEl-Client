@@ -1,0 +1,11 @@
+.session-form {
+  @include flexCenter(column);
+  margin-top: 2em;
+  border: 1px solid red;
+  width: 100%;
+  max-width: 500px;
+  input {
+    display: block;
+    padding: 1em;
+  }
+}
