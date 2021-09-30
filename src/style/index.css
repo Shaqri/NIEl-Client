@@ -60,8 +60,23 @@ table {
   border-spacing: 0;
 }
 
+body {
+  background-color: #323232;
+  color: #fff;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
 h1 {
   font-size: 2em;
+}
+
+input {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+button {
+  background-color: white;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .container-view-size {
@@ -88,7 +103,6 @@ h1 {
 }
 
 .title-header {
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -106,14 +120,35 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 2em;
-  border: 1px solid red;
+  margin-top: 3em;
   width: 100%;
-  max-width: 500px;
+  max-width: 350px;
 }
 
 .session-form input {
+  width: calc(100% - 2em - 2px);
   display: block;
   padding: 1em;
+  margin-bottom: 5px;
+  border: 2px solid #323232;
+  border-radius: 5px;
+}
+
+.session-form input:focus {
+  border: 2px solid #5bc2d6;
+}
+
+.session-form button {
+  font-size: 1.3em;
+  padding: .5em 1em;
+  border: 2px solid #5bc2d6;
+  border-radius: 30px;
+  margin-top: 1em;
+  -webkit-transition: 100ms ease-out;
+  transition: 100ms ease-out;
+}
+
+.session-form button:hover {
+  border: 2px solid #61358c;
 }
 /*# sourceMappingURL=index.css.map */

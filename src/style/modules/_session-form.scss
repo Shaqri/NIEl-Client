@@ -1,11 +1,29 @@
 .session-form {
   @include flexCenter(column);
-  margin-top: 2em;
-  border: 1px solid red;
+  margin-top: 3em;
   width: 100%;
-  max-width: 500px;
+  max-width: 350px;
   input {
+    width: calc(100% - 2em - 2px);
     display: block;
     padding: 1em;
+    margin-bottom: 5px;
+    border: 2px solid $background;
+    border-radius: 5px;
+    &:focus {
+      border: 2px solid $blue;
+    }
+  }
+
+  button {
+    font-size: 1.3em;
+    padding: .5em 1em;
+    border: 2px solid $blue;
+    border-radius: 30px;
+    margin-top: 1em;
+    transition: 100ms ease-out;
+    &:hover {
+      border: 2px solid $purple;
+    }
   }
 }

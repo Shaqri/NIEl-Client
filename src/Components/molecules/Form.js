@@ -1,6 +1,6 @@
 import Button from '../atoms/Button';
-
 function Form({children, styleClass}) {
+
   return(
     <form className={styleClass}>
       {children}

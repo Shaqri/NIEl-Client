@@ -1,29 +1,30 @@
 import TitleHeader from '../atoms/TitleHeader';
 import Form from '../molecules/Form';
 import TextInput from '../atoms/TextInput';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 function SessionForm() {
-
+  
   useEffect(() => {
-    console.log(process.env.REACT_APP_COUNTRIES_AUTH_TOKEN)
-    const requestCountries = async () => {
-      const request = await fetch('https://www.universal-tutorial.com/api/countries/', {
-        headers: {
-          "Authorization": `Bearer ${process.env.REACT_APP_COUNTRIES_AUTH_TOKEN}`
-        }
-      });
-      console.log(request)
-    };
-
-    requestCountries();
   }, []);
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   return(
     <>
       <TitleHeader text="Sign up"/>
       <Form styleClass="session-form">
-        <TextInput placeholder="Name" />
-        <TextInput placeholder="Email" />
+        <TextInput placeholder="Name" value={name} handleChange={setName} />
+        <TextInput placeholder="Email" value={email} handleChange={setEmail} />
+        <TextInput hideText placeholder="Password" value={password} handleChange={setPassword} />
+        <TextInput 
+        hideText 
+        placeholder="Password confirmation"
+        value={passwordConfirmation}
+        handleChange={setPasswordConfirmation}
+        />
       </Form>
     </>
   );

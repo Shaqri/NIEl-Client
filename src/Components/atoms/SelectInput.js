@@ -1,7 +1,6 @@
-function SelectInput({countries}) {
+function SelectInput({list}) {
   return(
     <select name='country' id='country'>
-      {countries.map(country => country.name)}
     </select>
   );
 };
