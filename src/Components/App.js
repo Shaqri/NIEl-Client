@@ -1,11 +1,10 @@
 import {Outlet} from 'react-router-dom';
+import AppNav from './organisms/AppNav';
 
 function App() {
   return (
     <>
-    <nav>
-      navbar
-    </nav>
+    <AppNav />
 
     <Outlet />
     

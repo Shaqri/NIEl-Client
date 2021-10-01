@@ -1,9 +1,13 @@
-function Button({styleClass, text, handleClick}) {
+function Button({styleClass, text, handleClick, icon}) {
+  
   return(
     <button
     onClick={handleClick} 
     type="button" 
-    className={styleClass}>{text}</button>
+    className={styleClass}>
+      {icon && <i class={icon}/>}
+      {text}
+    </button>
   );
 }
 

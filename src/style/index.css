@@ -79,6 +79,11 @@ button {
   font-family: 'Roboto Slab', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .container-view-size {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -100,6 +105,22 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .title-header {
@@ -150,5 +171,19 @@ button {
 
 .session-form button:hover {
   border: 2px solid #61358c;
+}
+
+.navbar {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .navbar {
+    display: block;
+  }
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=index.css.map */
