@@ -1,10 +1,10 @@
 import Button from '../atoms/Button';
-function Form({children, styleClass}) {
+function Form({children, styleClass, handleSubmit, button}) {
 
   return(
     <form className={styleClass}>
       {children}
-      <Button text="Sign up"/>
+      <Button handleClick={handleSubmit} text={button}/>
     </form>
   );
 }

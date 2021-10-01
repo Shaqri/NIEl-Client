@@ -4,7 +4,7 @@ function TextInput({placeholder, handleChange, hideText, value}) {
     value={value}
     placeholder={placeholder} 
     type={hideText ? "password" : "text"} 
-    onChange={(e) => {handleChange(e.value)}}
+    onChange={(e) => {handleChange(e.target.value)}}
     />
   );
 };

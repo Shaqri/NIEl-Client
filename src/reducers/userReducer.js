@@ -1,4 +1,4 @@
-function userReducer(state = {}, action) {
+function userReducer(state = {current: null}, action) {
   const {type, payload} = action;
 
   switch(type) {

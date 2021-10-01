@@ -1,10 +1,10 @@
 import ContainerViewSize from '../templates/ContainerViewSize';
-import SessionForm from '../organisms/SessionForm';
+import SignupForm from '../organisms/SignupForm';
 
 function Signup() {
   return (
     <ContainerViewSize styleClass="form-container">
-      <SessionForm />
+      <SignupForm />
     </ContainerViewSize>
   );
 }
