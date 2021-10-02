@@ -1,4 +1,4 @@
- function ContainerViewSize({children, styleClass}) {
+ function Container({children, styleClass}) {
   return(
     <section className={`container-view-size ${styleClass}`}>
       {children}
@@ -6,4 +6,4 @@
   );
  };
 
- export default ContainerViewSize;
+ export default Container;

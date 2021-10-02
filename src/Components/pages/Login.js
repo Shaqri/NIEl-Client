@@ -1,11 +1,11 @@
-import ContainerViewSize from '../templates/ContainerViewSize';
+import Container from '../templates/Container';
 import LoginForm from '../organisms/LoginForm';
 
 function Login() {
   return (
-    <ContainerViewSize styleClass="form-container">
+    <Container styleClass="form-container">
       <LoginForm />
-    </ContainerViewSize>
+    </Container>
   );
 }
 

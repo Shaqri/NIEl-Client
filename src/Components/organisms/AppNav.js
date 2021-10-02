@@ -23,6 +23,7 @@ function AppNav({user, setUser}) {
 
     return(
     <Session>
+      <Button styleClass="header-button nav-login" text="Log In" handleClick={() => navigate('/login')}/>
       <Button styleClass="header-button" text="Sign Up" handleClick={() => navigate('/signup')}/>
     </Session>
     );

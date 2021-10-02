@@ -22,13 +22,21 @@
   height: 50px;
 }
 
+.nav-login {
+  display: none;
+}
 
-@media screen and (min-width: 500px) {
+
+@media screen and (min-width: 700px) {
   .navbar {
     display: block;
   }
   .nav-logo {
     width: 10em;
     height: 5em;
+  }
+
+  .nav-login {
+    display: inline-block;
   }
 }
