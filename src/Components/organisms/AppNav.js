@@ -31,19 +31,19 @@ function AppNav({user, setUser}) {
 
   return(
     <header id="header">
-      <Dropdown>
-        <RouteLink route="/" text="Home" />
-        <RouteLink route="/beats" text="Beats" />
-        <RouteLink route="/contact_us" text="Contact Us" />
-        <RouteLink route="/merchandise" text="Merchandise" />
+      <Dropdown styleClass="nav-dropdown">
+        <RouteLink route="/home" text="Home" activeClass="active" />
+        <RouteLink route="/beats" text="Beats" activeClass="active" />
+        <RouteLink route="/merchandise" text="Merchandise" activeClass="active" />
+        <RouteLink route="/contact_us" text="Contact Us" activeClass="active" />
       </Dropdown>
 
       <Brand styleClass="nav-logo"/>
       <HorizontalBar styleClass="navbar">
-        <RouteLink route="/" text="Home" />
-        <RouteLink route="/beats" text="Beats" />
-        <RouteLink route="/contact_us" text="Contact Us" />
-        <RouteLink route="/merchandise" text="Merchandise" />
+        <RouteLink route="/home" text="Home" activeClass="active" />
+        <RouteLink route="/beats" text="Beats" activeClass="active" />
+        <RouteLink route="/merchandise" text="Merchandise" activeClass="active" />
+        <RouteLink route="/contact_us" text="Contact Us" activeClass="active" />
       </HorizontalBar>
 
       {renderUserSession()}

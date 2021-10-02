@@ -19,4 +19,8 @@
   @include flexCenter(row, space-between, center);
   background-color: black;
   padding: .5rem 1rem;
+
+  .active {
+    color: $blue;
+  }
 }

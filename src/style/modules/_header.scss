@@ -7,6 +7,14 @@
 
 .navbar {
   display: none;
+  a {
+    display: inline-block;
+    margin: 0 .5em;
+  }
+}
+
+.nav-dropdown {
+ 
 }
 
 .nav-logo {
@@ -18,5 +26,9 @@
 @media screen and (min-width: 500px) {
   .navbar {
     display: block;
+  }
+  .nav-logo {
+    width: 10em;
+    height: 5em;
   }
 }

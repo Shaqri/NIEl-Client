@@ -126,6 +126,10 @@ a {
   padding: .5rem 1rem;
 }
 
+#header .active {
+  color: #5bc2d6;
+}
+
 .title-header {
   text-align: center;
 }
@@ -191,6 +195,11 @@ a {
   display: none;
 }
 
+.navbar a {
+  display: inline-block;
+  margin: 0 .5em;
+}
+
 .nav-logo {
   width: 100px;
   height: 50px;
@@ -200,6 +209,10 @@ a {
   .navbar {
     display: block;
   }
+  .nav-logo {
+    width: 10em;
+    height: 5em;
+  }
 }
 
 .dropdown-list {
@@ -207,7 +220,7 @@ a {
   left: 0;
   right: 0;
   margin-top: 1rem;
-  background-color: red;
+  background-color: black;
 }
 
 .dropdown-list a {
@@ -216,7 +229,17 @@ a {
   padding: .5em 0;
 }
 
+@media screen and (min-width: 500px) {
+  .dropdown {
+    display: none;
+  }
+}
+
 .hidden {
   display: none;
+}
+
+.active-route {
+  color: #5bc2d6;
 }
 /*# sourceMappingURL=index.css.map */
