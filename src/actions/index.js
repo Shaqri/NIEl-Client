@@ -3,9 +3,9 @@ import {usersURL, authURL} from '../API';
 
 const SET_USER = 'SET_USER';
 
-const setUser = (data) => ({
-  type: SET_USER, payload: data 
-})
+const setUser = (data) => {
+  return {type: SET_USER, payload: data} 
+};
 
 const authenticateUser = (data) => {
   return async (dispatch) => {
@@ -32,4 +32,5 @@ const createUser = (userParams) => {
 export {
   createUser,
   authenticateUser,
+  setUser,
 }

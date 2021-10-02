@@ -7,12 +7,12 @@ function Dropdown({children}) {
     dropdownRef.current.classList.toggle('hidden')
   };
   return(
-    <>
-      <Button icon="fas fa-bars" handleClick={handleDropdown} />
+    <div className="dropdown">
+      <Button styleClass="header-button dropdown-button" icon="fas fa-bars" handleClick={handleDropdown} />
       <ul ref={dropdownRef} className="dropdown-list hidden">
         {children}
       </ul>
-    </>
+    </div>
   )
 };
 

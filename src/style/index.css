@@ -64,6 +64,7 @@ body {
   background-color: #323232;
   color: #fff;
   font-family: 'Roboto Slab', sans-serif;
+  position: relative;
 }
 
 h1 {
@@ -114,13 +115,15 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background-color: black;
+  padding: .5rem 1rem;
 }
 
 .title-header {
@@ -173,14 +176,40 @@ a {
   border: 2px solid #61358c;
 }
 
+.header-button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.1em;
+}
+
 .navbar {
   display: none;
+}
+
+.nav-logo {
+  width: 100px;
+  height: 50px;
 }
 
 @media screen and (min-width: 500px) {
   .navbar {
     display: block;
   }
+}
+
+.dropdown-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 1rem;
+  background-color: red;
+}
+
+.dropdown-list a {
+  display: block;
+  text-align: center;
+  padding: .5em 0;
 }
 
 .hidden {

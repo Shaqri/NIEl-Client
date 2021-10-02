@@ -16,5 +16,7 @@
 }
 
 #header {
-  @include flexCenter(row, space-between, stretch);
+  @include flexCenter(row, space-between, center);
+  background-color: black;
+  padding: .5rem 1rem;
 }

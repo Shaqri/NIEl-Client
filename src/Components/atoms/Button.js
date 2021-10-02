@@ -5,7 +5,7 @@ function Button({styleClass, text, handleClick, icon}) {
     onClick={handleClick} 
     type="button" 
     className={styleClass}>
-      {icon && <i class={icon}/>}
+      {icon && <i className={icon}/>}
       {text}
     </button>
   );
