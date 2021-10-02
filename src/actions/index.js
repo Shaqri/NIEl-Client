@@ -11,7 +11,7 @@ const authenticateUser = (data) => {
   return async (dispatch) => {
     try {
       const request = await axios.post(authURL, data);
-      console.log(request)
+      dispatch(setUser(request.data.data.attributes));
     }catch(error) {
       console.log(error.response.data)
     }

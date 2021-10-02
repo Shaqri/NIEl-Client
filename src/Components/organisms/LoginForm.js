@@ -1,14 +1,18 @@
 import TitleHeader from '../atoms/TitleHeader';
 import Form from '../molecules/Form';
 import TextInput from '../atoms/TextInput';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {authenticateUser} from '../../actions/index';
-
-function LoginForm({login}) {
+import {Link, useNavigate} from 'react-router-dom';
+function LoginForm({login, user}) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  useEffect(() => {
+    if(user) navigate('/');
+  }, [user]);
 
   const handleSubmit = () => {
     login({
@@ -26,6 +30,9 @@ function LoginForm({login}) {
         <TextInput value={email} placeholder="Email" handleChange={setEmail}/>
         <TextInput value={password} hideText placeholder="Password" handleChange={setPassword} />
       </Form>
+      
+      <p>Don't have an account?</p>
+      <Link className="session-link" to="/signup" >Sign up</Link>
     </>
   );
 };

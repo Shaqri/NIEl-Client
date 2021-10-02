@@ -167,13 +167,17 @@ a {
   padding: .5em 1em;
   border: 2px solid #5bc2d6;
   border-radius: 30px;
-  margin-top: 1em;
+  margin: 1em 0;
   -webkit-transition: 100ms ease-out;
   transition: 100ms ease-out;
 }
 
 .session-form button:hover {
   border: 2px solid #61358c;
+}
+
+.session-link {
+  color: #5bc2d6;
 }
 
 .header-button {

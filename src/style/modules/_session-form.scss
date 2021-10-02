@@ -20,10 +20,14 @@
     padding: .5em 1em;
     border: 2px solid $blue;
     border-radius: 30px;
-    margin-top: 1em;
+    margin: 1em 0;
     transition: 100ms ease-out;
     &:hover {
       border: 2px solid $purple;
     }
   }
+}
+
+.session-link {
+  color: $blue;
 }

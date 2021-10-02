@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
 import {createUser} from '../../actions/index';
 import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function SignupForm({signUp, user}) {
   const [name, setName] = useState('');
@@ -43,6 +44,9 @@ function SignupForm({signUp, user}) {
         handleChange={setPasswordConfirmation}
         />
       </Form>
+
+      <p>Already have an account?</p>
+      <Link className="session-link" to="/login">Login</Link>
     </>
   );
 }
