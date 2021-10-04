@@ -1,6 +1,10 @@
-function TitleHeader({text}) {
+function TitleHeader({text, styleClass}) {
   return(
-    <h1 className="title-header">{text}</h1>
+    <h1 className={`title-header ${styleClass}`}>
+      <span>
+        {text}
+      </span>
+    </h1>
   );
 }
 
