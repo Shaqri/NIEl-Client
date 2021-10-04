@@ -7,7 +7,7 @@ function Dropdown({children, styleClass}) {
     dropdownRef.current.classList.toggle('hidden')
   };
   return(
-    <div className={`dropdown ${styleClass}`}>
+    <div className={`l-dropdown ${styleClass}`}>
       <Button styleClass="header-button dropdown-button" icon="fas fa-bars" handleClick={handleDropdown} />
       <ul ref={dropdownRef} className="dropdown-list hidden">
         {children}

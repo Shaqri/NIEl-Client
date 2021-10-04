@@ -68,15 +68,13 @@
 }
 
 .l-list-with-header {
-  border: 1px solid blue;
   height: 100%;
   
   .list {
     display: grid;
-    
+   
   }
   .card {
-    border: 1px solid red;
     height: 300px;
     margin: 1rem;
     text-align: center;
@@ -90,6 +88,22 @@
   }
 }
 
+.l-dropdown {
+  .dropdown-list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 1rem;
+    background-color: black;
+    z-index: 2;
+    a {
+      display: block;
+      text-align: center;
+      padding: .5em 0;
+    }
+  }  
+}
+
 #header {
   @include flexCenter(row, space-between, center);
   background-color: black;
@@ -98,5 +112,12 @@
 
   .active {
     color: $blue;
+  }
+}
+
+
+@media screen and (min-width: 700px) {
+  .l-dropdown {
+    display: none;
   }
 }

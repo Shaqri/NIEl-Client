@@ -14,3 +14,13 @@
     }
   }
 }
+
+@media screen and(min-width: 700px) {
+  .service-list {
+    .list {
+      justify-content: center;
+      grid-template-columns: repeat(2, minmax(300px, 750px));
+    }
+    
+  }
+}

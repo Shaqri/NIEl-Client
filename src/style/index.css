@@ -160,7 +160,6 @@ a {
 }
 
 .l-list-with-header {
-  border: 1px solid blue;
   height: 100%;
 }
 
@@ -170,7 +169,6 @@ a {
 }
 
 .l-list-with-header .card {
-  border: 1px solid red;
   height: 300px;
   margin: 1rem;
   text-align: center;
@@ -182,6 +180,21 @@ a {
 
 .l-list-with-header .card .title {
   font-size: 1.5em;
+}
+
+.l-dropdown .dropdown-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 1rem;
+  background-color: black;
+  z-index: 2;
+}
+
+.l-dropdown .dropdown-list a {
+  display: block;
+  text-align: center;
+  padding: .5em 0;
 }
 
 #header {
@@ -205,6 +218,12 @@ a {
 
 #header .active {
   color: #5bc2d6;
+}
+
+@media screen and (min-width: 700px) {
+  .l-dropdown {
+    display: none;
+  }
 }
 
 .title-header {
@@ -299,27 +318,6 @@ a {
   }
 }
 
-.dropdown-list {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-top: 1rem;
-  background-color: black;
-  z-index: 2;
-}
-
-.dropdown-list a {
-  display: block;
-  text-align: center;
-  padding: .5em 0;
-}
-
-@media screen and (min-width: 700px) {
-  .dropdown {
-    display: none;
-  }
-}
-
 .welcome {
   height: 100%;
   position: relative;
@@ -346,6 +344,16 @@ a {
 .service-list .card .title {
   color: #5bc2d6;
   padding: .5em 0 1em 0;
+}
+
+@media screen and (min-width: 700px) {
+  .service-list .list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: (minmax(300px, 750px))[2];
+        grid-template-columns: repeat(2, minmax(300px, 750px));
+  }
 }
 
 .hidden {
