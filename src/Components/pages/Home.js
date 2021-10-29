@@ -6,8 +6,12 @@ import Licenses from '../organisms/Licenses'
 
 function Home () {
   return(
-  <Container styleClass="page-container home">
-    <BackgroundWithText withShade image={homeImg} text="Welcome!" styleClass="welcome" />
+  <Container styleClass="home space-nav-top">
+    <BackgroundWithText 
+    withShade 
+    image={homeImg} 
+    text="Welcome!"
+    styleClass="welcome-container" />
     <Services/>
     <Licenses />
   </Container>

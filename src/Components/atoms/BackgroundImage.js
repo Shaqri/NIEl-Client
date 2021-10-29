@@ -1,6 +1,13 @@
 function BackgroundImage({path}) {
+  const styleObj = {
+    backgroundImage: `url(${path})`,
+    backgroundPosition: 'center top',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    
+  }
   return(
-    <img src={path} className="background-image"/>
+    <div style={styleObj} className="background-image"/>
   );
 };
 

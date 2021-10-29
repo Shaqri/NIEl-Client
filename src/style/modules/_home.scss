@@ -3,11 +3,12 @@
   
 }
 
-.welcome {
-  height: 100%;
-  position: relative;
-  p {
-      z-index: 1;
-      font-size: 2em;
+.welcome-container {
+  height: 90vh;
+  width: 100%;
+
+  .absolute-center {
+    z-index: 1;
+    font-size: 2em;
   }
 }

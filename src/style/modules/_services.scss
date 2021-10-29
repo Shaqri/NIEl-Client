@@ -1,7 +1,5 @@
 .services {
   @include flexCenter(column, center, center);
-  height: fit-content;
-  min-height: 90vh;
 }
 
 .service-list {

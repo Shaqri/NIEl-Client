@@ -4,12 +4,12 @@ import Container from './templates/Container';
 
 function App() {
   return (
-    <Container>
+    <>
     <AppNav />
 
     <Outlet />
     
-    </Container>
+    </>
    
   );
 }
