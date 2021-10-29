@@ -5,7 +5,7 @@ import Container from '../templates/Container';
 
 function Services() {
   return(
-    <Container styleClass="services">
+    <Container styleClass="services ">
       <ListWithHeader styleClass="service-list" header="Our Services" headerClass="section-header">
         <Card 
           icon="fas fa-headphones"

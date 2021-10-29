@@ -20,7 +20,7 @@ function AppRouter() {
     { path: '/', element: <App />,
      children: [
       {path: '/home', element: <Home />},
-      {path: '/beats', element: <Beats />},
+      {path: '/beats/*', element: <Beats />},
       {path: '/merchandise', element: <Merchandise />},
       {path: '/contact_us', element: <ContactUs />},
      ]},

@@ -11,7 +11,7 @@ function Home () {
     withShade 
     image={homeImg} 
     text="Welcome!"
-    styleClass="welcome-container" />
+    styleClass="welcome" />
     <Services/>
     <Licenses />
   </Container>

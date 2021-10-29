@@ -29,8 +29,15 @@ const createUser = (userParams) => {
   }
 };
 
+const getBeats = () => {
+  return (dispatch) => {
+
+  }
+};
+
 export {
   createUser,
   authenticateUser,
   setUser,
+  getBeats
 }

@@ -23,10 +23,18 @@
   }
 }
 
+.border {
+  border: 1px solid red;
+}
+
 .container-view-size {
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
+}
+
+.page-container {
+  min-height: 90vh;
 }
 
 .space-nav-top {
@@ -95,7 +103,6 @@
   }
   .card {
     position: relative;
-    min-height: 300px;
     text-align: center;
     border: 1px solid $blue;
     border-radius: 5px;
@@ -140,6 +147,10 @@
 
 
 @media screen and (min-width: 700px) {
+  #body {
+    font-size: 13px;
+  }
+
   .l-dropdown {
     display: none;
   }
