@@ -1,0 +1,74 @@
+.licenses {
+  @include flexCenter(column, center, center);
+  height: fit-content;
+  min-height: 90vh;
+}
+
+.license-list {
+
+  .list {
+    grid-auto-rows: 400px;
+    .card {
+      border: 1px solid $black;
+      background-color: $black;
+      padding: 1em;
+      height: 100%;
+      >.title {
+        margin-bottom: 1em;
+      }
+      .pre-description {
+        .title {
+          font-size: 1em;
+          padding-bottom: .4rem;
+          span {
+            border-bottom: 1px solid red;
+          }
+        }
+  
+        .description {
+          color: $blue;
+        }
+      }
+  
+      > .description {
+        @include flexCenter(column, center, center);
+        height: 50%;
+        span {
+          padding: 6px 0;
+        }
+      }
+  
+      .footer {
+        position: absolute;
+        bottom: 1.3rem;
+        left: 50%;
+        transform: translate(-50%);
+        padding-top: 2rem;
+        font-size:2em;
+        color: $blue;
+      }
+    }
+  }
+  
+}
+
+@media screen and(min-width: 700px) {
+  .license-list {
+    .list {
+      grid-auto-rows: 380px;
+      grid-template-columns: repeat(2, minmax(100px, 500px));
+    }
+  }
+}
+
+@media screen and(min-width: 1000px) {
+  .license-list {
+    .list {
+      grid-auto-rows: 60vh;
+      grid-template-columns: repeat(4, minmax(100px, 350px));
+      .card {
+        min-width: auto;
+      }
+    }
+  }
+}

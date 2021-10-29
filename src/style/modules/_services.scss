@@ -1,4 +1,5 @@
 .services {
+  @include flexCenter(column, center, center);
   height: fit-content;
   min-height: 90vh;
 }
@@ -6,8 +7,6 @@
 .service-list {
   .card {
     padding: 2em 1em;
-    border: 1px solid $blue;
-    border-radius: 5px;
     .title {
       color: $blue;
       padding: .5em 0 1em 0;
@@ -18,7 +17,7 @@
 @media screen and(min-width: 700px) {
   .service-list {
     .list {
-      justify-content: center;
+     
       grid-template-columns: repeat(2, minmax(300px, 750px));
     }
     
