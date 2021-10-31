@@ -7,7 +7,7 @@ function Beats(props) {
   return(
     <Routes>
       <Route path="/" element={<BeatsList />} />
-      <Route path="/:genreName" element={<BeatsList />}/>
+      <Route path="/:genreSlug" element={<BeatsList />}/>
     </Routes>
   );
 };

@@ -27,8 +27,8 @@ function BeatsList (props) {
         <NavLink end to="/beats">All</NavLink>
         { allGenres &&
           allGenres.map((genre) => {
-            const {attributes: {name}} = genre;
-            return <NavLink to={`/beats/${name}`}>{name}</NavLink>
+            const {attributes: {name, slug}} = genre;
+            return <NavLink to={`/beats/${slug}`}>{name}</NavLink>
           })
         }
       
