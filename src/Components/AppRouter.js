@@ -8,6 +8,7 @@ import Merchandise from './pages/Merchandise';
 import ContactUs from './pages/ContactUs';
 import {useNavigate, useLocation} from 'react-router-dom';
 import {useEffect} from 'react';
+import BeatList from './organisms/BeatsList'
 
 function AppRouter() {
   const navigate = useNavigate();

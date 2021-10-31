@@ -1,11 +1,10 @@
 import HorizontalBar from '../molecules/HorizontalBar';
-import RouteLink from '../atoms/RouteLink';
 import Dropdown from '../molecules/Dropdown';
 import Session from '../molecules/Session';
 import Button from '../atoms/Button';
 import {connect} from 'react-redux';
 import {setUser} from '../../actions/index';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, NavLink} from 'react-router-dom';
 import Brand from '../atoms/Brand';
 
 function AppNav({user, setUser}) {
@@ -33,18 +32,18 @@ function AppNav({user, setUser}) {
   return(
     <header id="header">
       <Dropdown styleClass="nav-dropdown">
-        <RouteLink route="/home" text="Home" activeClass="active" />
-        <RouteLink route="/beats" text="Beats" activeClass="active" />
-        <RouteLink route="/merchandise" text="Merchandise" activeClass="active" />
-        <RouteLink route="/contact_us" text="Contact Us" activeClass="active" />
+        <NavLink to="/home" >Home</NavLink> 
+        <NavLink to="/beats">Beats</NavLink>  
+        <NavLink to="/merchandise">Merchandise</NavLink> 
+        <NavLink to="/contact_us">Contact Us</NavLink> 
       </Dropdown>
 
       <Brand styleClass="nav-logo"/>
       <HorizontalBar styleClass="navbar">
-        <RouteLink route="/home" text="Home" activeClass="active" />
-        <RouteLink route="/beats" text="Beats" activeClass="active" />
-        <RouteLink route="/merchandise" text="Merchandise" activeClass="active" />
-        <RouteLink route="/contact_us" text="Contact Us" activeClass="active" />
+        <NavLink to="/home" >Home</NavLink> 
+        <NavLink to="/beats">Beats</NavLink>  
+        <NavLink to="/merchandise">Merchandise</NavLink> 
+        <NavLink to="/contact_us">Contact Us</NavLink> 
       </HorizontalBar>
 
       {renderUserSession()}
