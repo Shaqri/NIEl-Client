@@ -1,5 +1,6 @@
 .services {
   @include flexCenter(column, center, center);
+  padding: 1em;
 }
 
 .service-list {

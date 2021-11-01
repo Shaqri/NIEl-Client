@@ -1,5 +1,6 @@
 .licenses {
   @include flexCenter(column, center, center);
+  padding: 1em;
 }
 
 .license-list {

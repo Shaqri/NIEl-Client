@@ -5,7 +5,7 @@ import {usersURL, authURL, genresURL,
 const SET_USER = 'SET_USER';
 const SET_ALL_GENRES = 'SET_ALL';
 const SET_CURRENT_BEATS_LIST = 'SET_CURRENT_LIST';
-const SET_ALL_LICENSES = 'SET_ALL';
+const SET_ALL_LICENSES = 'SET_ALL_LICENSES';
 
 const setUser = (data) => {
   return {type: SET_USER, payload: data} 
@@ -81,6 +81,7 @@ const getLicenses =  () => {
     try {
       const response = await axios.get(licensesURL);
       console.log(response)
+      dispatch(setAllLicenses(response.data.data));
     }catch(error) {
       console.log(error)
     }

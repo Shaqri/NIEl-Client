@@ -4,54 +4,48 @@ import Card from '../molecules/Card';
 import DescriptionWithTitle from '../molecules/DescriptionWithTitle';
 import Footer from '../atoms/Footer';
 import {connect} from 'react-redux';
+import {getLicenses} from '../../actions/index';
+import {useEffect} from 'react';
 
-function Licenses() {
+function Licenses(props) {
+  const {getLicenses, allLicenses} = props;
+
+  useEffect(() => {
+    getLicenses()
+  }, [])
+
+  const splitTextByComma = (text) => {
+    const textSplit = text.split(',');
+    return textSplit.map(text => <span>{text}</span>);
+  };
+
   return(
     <Container styleClass="licenses">
       <ListWithHeader 
        header="Licenses"
        headerClass="section-header"
        styleClass="license-list">
-        <Card
-          titleText="Standard"
-          preDescription={
-            <DescriptionWithTitle 
-              title="You Get"
-              description="Mp3-file"
-            />
-          }
-          descriptionText="-Cannot be registered | -Cannot be monetized"
-          footer={
-            <Footer text="$29USD"/>
-          }
-        />
-        <Card
-          titleText="Premium"
-          preDescription={
-            <DescriptionWithTitle 
-              title="You Get"
-              description=".Mp3-file | .Wav-file"
-            />
-          }
-          descriptionText="-Cannot be registered | -Cannot be monetized"
-          footer={
-            <Footer text="$49USD"/>
-          }
-        />
-        <Card
-          title="Unlimited"
-          preDescriptionTitle="You Get"
-          preDescription=".Mp3-file | .Wav-file | Stems" 
-          description="-Acquire beat's rights | -Can be registered | -Can be monetized"
-          footer="$99USD"
-        />
-        <Card
-          title="Custom"
-          preDescriptionTitle="You Get"
-          preDescription="Custom beat | .Mp3-file | .Wav-file | Stems"
-          description="-Acquire beat's rights | -Can be registered | -Can be monetized"
-          footer="$199USD"
-        />
+        {allLicenses &&
+          
+          allLicenses.map((license) => {
+            const {attributes: {name, files, description, price_cents}} = license;
+            return(
+            <Card
+              titleText={name}
+              preDescription={
+              <DescriptionWithTitle 
+                styleClass="pre-description"
+                title="You Get"
+                description={splitTextByComma(files)}
+              />
+              }
+              descriptionText={splitTextByComma(description)}
+              footer={
+                <Footer text={`$${price_cents}USD`}/>
+              }
+            />)
+          })
+        }
       </ListWithHeader>
     </Container>
   );
@@ -59,6 +53,10 @@ function Licenses() {
 
 const mapStateToProps = (state) => ({
   allLicenses: state.license.all
-})
+});
 
-export default connect()(Licenses);
+const mapDispatchToProps = (dispatch) => ({
+  getLicenses: () => {dispatch(getLicenses())}
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Licenses);

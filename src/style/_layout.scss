@@ -5,10 +5,6 @@
   flex-direction: $direction;
 }
 
-#body {
-  box-sizing: border-box;
-}
-
 #header {
   @include flexCenter(row, space-between, center);
   position: fixed;
@@ -149,9 +145,6 @@
 
 
 @media screen and (min-width: 700px) {
-  #body {
-    font-size: 13px;
-  }
 
   .l-dropdown {
     display: none;

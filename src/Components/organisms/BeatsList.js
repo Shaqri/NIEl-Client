@@ -5,7 +5,7 @@ import {useEffect} from 'react';
 import {connect} from 'react-redux';
 import { getBeats, getGenres } from '../../actions/index';
 import ListWithHeader from '../molecules/ListWithHeader';
-import Card from '../atoms/Card';
+import Card from '../molecules/Card';
 
 function BeatsList (props) {
   const {currentBeats, getBeats, currentGenre,
@@ -42,7 +42,7 @@ function BeatsList (props) {
             const {attributes: {name}} = beat;
             return (
               <Card 
-                title={name}
+                titleText={name}
                 description="description"
               />
             )

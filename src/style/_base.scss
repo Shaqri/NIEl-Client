@@ -5,6 +5,7 @@ body {
   color: #fff;
   font-family: 'Roboto Slab', sans-serif;
   position: relative;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -25,3 +26,8 @@ a {
   color: white;
 }
 
+@media screen and (max-width: 1366px) {
+  body {
+    font-size: 13px;
+  }
+}
