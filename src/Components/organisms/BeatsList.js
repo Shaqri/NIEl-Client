@@ -4,12 +4,14 @@ import Container from '../templates/Container';
 import {useEffect} from 'react';
 import {connect} from 'react-redux';
 import { getBeats, getGenres } from '../../actions/index';
+import ListWithHeader from '../molecules/ListWithHeader';
+import Card from '../atoms/Card';
 
 function BeatsList (props) {
   const {currentBeats, getBeats, currentGenre,
     allGenres, getGenres} = props;
   
-  const {genreName} = useParams();
+  const {genreSlug} = useParams();
 
   useEffect(() => {
     getGenres()
@@ -17,8 +19,8 @@ function BeatsList (props) {
   }, [])
 
   useEffect(() => {
-    getBeats(genreName)
-  }, [genreName])
+    getBeats(genreSlug)
+  }, [genreSlug])
 
   return(
     <Container styleClass="space-nav-top page-container border">
@@ -33,6 +35,20 @@ function BeatsList (props) {
         }
       
       </HorizontalNavbar>
+
+      <ListWithHeader>
+        {currentBeats &&
+          currentBeats.map((beat) => {
+            const {attributes: {name}} = beat;
+            return (
+              <Card 
+                title={name}
+                description="description"
+              />
+            )
+          })
+        }
+      </ListWithHeader>
 
 
     </Container>

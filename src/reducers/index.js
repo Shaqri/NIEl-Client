@@ -5,11 +5,13 @@ import storage from 'redux-persist/lib/storage';
 import userReducer from './userReducer';
 import genreReducer from './genreReducer';
 import beatReducer from './beatReducer';
+import licenseReducer from './licenseReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
   beat: beatReducer,
-  genre: genreReducer
+  genre: genreReducer,
+  license: licenseReducer
 });
 
 const persistConfig = {

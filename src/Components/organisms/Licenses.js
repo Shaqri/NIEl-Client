@@ -1,6 +1,9 @@
 import Container from '../templates/Container';
 import ListWithHeader from '../molecules/ListWithHeader';
-import Card from '../atoms/Card';
+import Card from '../molecules/Card';
+import DescriptionWithTitle from '../molecules/DescriptionWithTitle';
+import Footer from '../atoms/Footer';
+import {connect} from 'react-redux';
 
 function Licenses() {
   return(
@@ -10,18 +13,30 @@ function Licenses() {
        headerClass="section-header"
        styleClass="license-list">
         <Card
-          title="Standard"
-          preDescriptionTitle="You Get"
-          preDescription=".Mp3-file"
-          description="-Cannot be registered | -Cannot be monetized"
-          footer="$29USD"
+          titleText="Standard"
+          preDescription={
+            <DescriptionWithTitle 
+              title="You Get"
+              description="Mp3-file"
+            />
+          }
+          descriptionText="-Cannot be registered | -Cannot be monetized"
+          footer={
+            <Footer text="$29USD"/>
+          }
         />
         <Card
-          title="Premium"
-          preDescriptionTitle="You Get"
-          preDescription=".Mp3-file | .Wav-file"
-          description="-Cannot be registered | -Cannot be monetized"
-          footer="$49USD"
+          titleText="Premium"
+          preDescription={
+            <DescriptionWithTitle 
+              title="You Get"
+              description=".Mp3-file | .Wav-file"
+            />
+          }
+          descriptionText="-Cannot be registered | -Cannot be monetized"
+          footer={
+            <Footer text="$49USD"/>
+          }
         />
         <Card
           title="Unlimited"
@@ -42,4 +57,8 @@ function Licenses() {
   );
 };
 
-export default Licenses;
+const mapStateToProps = (state) => ({
+  allLicenses: state.license.all
+})
+
+export default connect()(Licenses);

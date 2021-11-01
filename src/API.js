@@ -1,12 +1,15 @@
-const baseURL = () => process.env.REACT_APP_API_URL;
+const baseURL = process.env.REACT_APP_API_URL;
 
-const usersURL = `${baseURL()}/api/v1/users`;
-const authURL = `${baseURL()}/api/v1/authentication`
-const genresURL = `${baseURL()}/api/v1/genres`
-
+const usersURL = `${baseURL}/users`;
+const authURL = `${baseURL}/authentication`
+const genresURL = `${baseURL}/genres`
+const tracksURL = `${baseURL}/tracks`
+const licensesURL = `${baseURL}/licenses`
 
 export {
   usersURL,
   authURL,
   genresURL,
+  tracksURL,
+  licensesURL
 }

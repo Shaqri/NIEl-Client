@@ -1,9 +1,11 @@
 import axios from 'axios';
-import {usersURL, authURL, genresURL} from '../API';
+import {usersURL, authURL, genresURL, 
+  tracksURL, licensesURL} from '../API';
 
 const SET_USER = 'SET_USER';
 const SET_ALL_GENRES = 'SET_ALL';
 const SET_CURRENT_BEATS_LIST = 'SET_CURRENT_LIST';
+const SET_ALL_LICENSES = 'SET_ALL';
 
 const setUser = (data) => {
   return {type: SET_USER, payload: data} 
@@ -11,6 +13,10 @@ const setUser = (data) => {
 
 const setCurrentBeatsList = (list) => ({
   type: SET_CURRENT_BEATS_LIST, payload: list
+});
+
+const setAllLicenses = (list) => ({
+  type: SET_ALL_LICENSES, payload: list 
 });
 
 const authenticateUser = (data) => {
@@ -50,15 +56,33 @@ const getGenres = () => {
   }
 };
 
-const getBeats = (genre) => {
+
+const getBeats = (genreSlug) => {
   return async (dispatch) => {
     try {
-      const genreSlug = genre ? genre : 'all';
-      const response = await axios.get(`${genresURL}/${genreSlug}/tracks`);
-      dispatch(setCurrentBeatsList(response.data.data))
-      console.log(response.data.data)
+      if(genreSlug) {
+        const response = await axios.get(`${genresURL}/${genreSlug}`);
+        console.log(response)
+        dispatch(setCurrentBeatsList(response.data.included))
+        
+      }else {
+        const response = await axios.get(tracksURL);
+        console.log(response)
+        dispatch(setCurrentBeatsList(response.data.data));
+      }  
     } catch(error) {
-      console.log(error.response.data)
+      console.log(error)
+    }
+  }
+};
+
+const getLicenses =  () => {
+  return async(dispatch) => {
+    try {
+      const response = await axios.get(licensesURL);
+      console.log(response)
+    }catch(error) {
+      console.log(error)
     }
   }
 };
@@ -69,5 +93,5 @@ export {
   setUser,
   getGenres,
   getBeats,
-  
+  getLicenses
 }
