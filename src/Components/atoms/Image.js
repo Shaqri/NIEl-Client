@@ -1,6 +1,9 @@
-function Image({path, styleClass}) {
+function Image({path, styleClass, containerClass}) {
   return(
-    <img src={path} className={`full-width-height ${styleClass}`} />
+    <div className={`image-container ${containerClass}`}>
+      <img src={path} className={`full-width-height ${styleClass}`} />
+    </div>
+    
   )
 };
 

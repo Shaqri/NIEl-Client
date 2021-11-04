@@ -6,6 +6,7 @@ import Footer from '../atoms/Footer';
 import {connect} from 'react-redux';
 import {getLicenses} from '../../actions/index';
 import {useEffect} from 'react';
+import Description from '../atoms/Description';
 
 function Licenses(props) {
   const {getLicenses, allLicenses} = props;
@@ -39,7 +40,9 @@ function Licenses(props) {
                 description={splitTextByComma(files)}
               />
               }
-              descriptionText={splitTextByComma(description)}
+              description={
+                <Description text={splitTextByComma(description)}/>
+              }
               footer={
                 <Footer text={`$${price_cents}USD`}/>
               }

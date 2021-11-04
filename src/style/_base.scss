@@ -18,7 +18,14 @@ input {
 
 button {
   background-color: white;
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
   font-family: 'Roboto Slab', sans-serif;
+  border-radius: 6px;
+  i {
+    margin-right: 5px;
+  }
 }
 
 a {

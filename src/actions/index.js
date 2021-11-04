@@ -50,6 +50,7 @@ const getGenres = () => {
     try {
       const response = await axios.get(genresURL);
       dispatch(setAllGenres(response.data.data))
+      console.log(response.data.data)
     }catch (error) {
       console.log(error.response.data)
     }
@@ -60,16 +61,11 @@ const getGenres = () => {
 const getBeats = (genreSlug) => {
   return async (dispatch) => {
     try {
-      if(genreSlug) {
-        const response = await axios.get(`${genresURL}/${genreSlug}`);
-        console.log(response)
-        dispatch(setCurrentBeatsList(response.data.included))
-        
-      }else {
-        const response = await axios.get(tracksURL);
+        const url = genreSlug ? `${tracksURL}?genre=${genreSlug}` : tracksURL;
+        const response = await axios.get(url);
         console.log(response)
         dispatch(setCurrentBeatsList(response.data.data));
-      }  
+      
     } catch(error) {
       console.log(error)
     }

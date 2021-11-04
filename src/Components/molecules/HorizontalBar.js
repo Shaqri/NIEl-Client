@@ -1,6 +1,6 @@
 function HorizontalBar ({children, styleClass}) {
   return(
-    <nav className={styleClass}>
+    <nav className={`horizontal-list ${styleClass}`}>
       {children}
     </nav>
   );

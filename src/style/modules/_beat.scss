@@ -1,0 +1,53 @@
+
+.l-list-with-header {
+  .list {
+    margin: 0 auto;
+    border: 1px solid green;
+    grid-template-columns: minmax(200px, 250px);
+    padding: 1em;
+  }
+  .beat-card {
+    border: 1px solid $black;
+    background-color: $black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    .image-container {
+      height: 210px;
+      img {
+        border-radius: 8px;
+      }
+    }
+    .title {
+      color: $blue;
+    }
+
+    .details {
+      padding: 1em;
+      .bpm-date {
+        margin: 1em 0;
+        @include flexCenter(row, space-between, center);
+        >* {
+          display: inline-block;
+        }
+        .bpm {
+          font-weight: bolder;
+        }
+      }
+
+      .add-to-cart-button {
+        margin: 1em 0;
+        background-color: $red;
+        color: white;
+        border: 1px solid $red;
+      }
+
+      .genres-list {
+        span {
+          border: 1px solid white;
+          border-radius: 2px;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

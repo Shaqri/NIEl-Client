@@ -1,10 +1,8 @@
 import Image from '../atoms/Image';
-import DescriptionWithTitle from './DescriptionWithTitle';
 import Title from '../atoms/Title';
-import Description from '../atoms/Description';
 
 function Card(props) {
-  const {image, icon, titleText, descriptionText,
+  const {image, icon, titleText, description,
     preDescription, footer, styleClass} = props;
   return (
     <li className={`card ${styleClass}`}>
@@ -14,15 +12,19 @@ function Card(props) {
         {icon &&
           <i className={`${icon} icon`} />
         }
-        <Title text={titleText}/>
-        {preDescription &&
-          preDescription
-        }
-        <Description text={descriptionText}/>
+        <div className="details">
+          <Title text={titleText}/>
+          {preDescription &&
+            preDescription
+          }
+          {description  &&
+            description
+          }
 
-        {footer &&
-          footer
-        }
+          {footer &&
+            footer
+          }
+        </div>
 
     </li>
   )

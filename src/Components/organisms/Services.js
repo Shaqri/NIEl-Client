@@ -1,7 +1,7 @@
 import Card from '../molecules/Card';
 import ListWithHeader from '../molecules/ListWithHeader';
 import Container from '../templates/Container';
-
+import Description from '../atoms/Description';
 
 function Services() {
   return(
@@ -10,22 +10,30 @@ function Services() {
         <Card 
           icon="fas fa-headphones"
           titleText="Beats"
-          descriptionText="Acquire beats' licenses or request your custom exclusive beats."
+          description={
+            <Description text="Acquire beats' licenses or request your custom exclusive beats."/>
+          }
         />
         <Card 
           icon="fas fa-puzzle-piece"
           titleText="Beats"
-          descriptionText="Acquire beats' licenses or request your custom exclusive beats."
+          description={
+            <Description text="Acquire beats' licenses or request your custom exclusive beats."/>
+          }
         />
         <Card 
           icon="fas fa-mortar-pestle"
           titleText="Beats"
-          descriptionText="Acquire beats' licenses or request your custom exclusive beats."
+          description={
+            <Description text="Acquire beats' licenses or request your custom exclusive beats."/>
+          }
         />
         <Card 
           icon="fas fa-tshirt"
           titleText="Beats"
-          descriptionText="Acquire beats' licenses or request your custom exclusive beats."
+          description={
+            <Description text="Acquire beats' licenses or request your custom exclusive beats."/>
+          }
         />
       </ListWithHeader>
     </Container>

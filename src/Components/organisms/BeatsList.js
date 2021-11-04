@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 import { getBeats, getGenres } from '../../actions/index';
 import ListWithHeader from '../molecules/ListWithHeader';
 import Card from '../molecules/Card';
+import Button from '../atoms/Button';
+import HorizontalList from '../molecules/HorizontalList';
 
 function BeatsList (props) {
   const {currentBeats, getBeats, currentGenre,
@@ -22,10 +24,14 @@ function BeatsList (props) {
     getBeats(genreSlug)
   }, [genreSlug])
 
+  const mapBeatGenresList = (list) => {
+    return list.map(genre => <span>{genre.name}</span> )
+  }
+
   return(
     <Container styleClass="space-nav-top page-container border">
     
-      <HorizontalNavbar styleClass="navbar nav-genre">
+      <HorizontalNavbar styleClass="nav-genre">
         <NavLink end to="/beats">All</NavLink>
         { allGenres &&
           allGenres.map((genre) => {
@@ -39,11 +45,34 @@ function BeatsList (props) {
       <ListWithHeader>
         {currentBeats &&
           currentBeats.map((beat) => {
-            const {attributes: {name}} = beat;
+            const {attributes: {name, bpm, imageFile}} = beat;
+            const {relationships: {genres: {meta}}} = beat;
+
             return (
-              <Card 
+              <Card
+                styleClass="beat-card"
+                image={process.env.REACT_APP_BASE_URL + imageFile.url}
                 titleText={name}
-                description="description"
+                preDescription={
+                  <div className="bpm-date">
+                    <div className="bpm">
+                      <span>BPM:</span>
+                      <span>{bpm}</span>
+                    </div>
+                    <div className="date">
+                      <span>12 Jul 2021</span>
+                    </div>
+                  </div>
+                }
+                description={
+                  <Button
+                  styleClass="add-to-cart-button"
+                  icon="fas fa-shopping-cart" 
+                  text="Add To Cart"/>
+                }
+                footer={
+                  <HorizontalList styleClass="genres-list" list={mapBeatGenresList(meta)}/>
+                }
               />
             )
           })
