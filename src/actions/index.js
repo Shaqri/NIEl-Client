@@ -58,10 +58,10 @@ const getGenres = () => {
 };
 
 
-const getBeats = (genreSlug) => {
+const getBeats = (genreSlugs) => {
   return async (dispatch) => {
     try {
-        const url = genreSlug ? `${tracksURL}?genre=${genreSlug}` : tracksURL;
+        const url = genreSlugs ? `${tracksURL}?genres=${genreSlugs}` : tracksURL;
         const response = await axios.get(url);
         console.log(response)
         dispatch(setCurrentBeatsList(response.data.data));

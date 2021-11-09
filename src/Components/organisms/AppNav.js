@@ -31,7 +31,7 @@ function AppNav({user, setUser}) {
 
   return(
     <header id="header">
-      <Dropdown styleClass="nav-dropdown">
+      <Dropdown styleClass="nav-dropdown" icon="fas fa-bars">
         <NavLink to="/home" >Home</NavLink> 
         <NavLink to="/beats">Beats</NavLink>  
         <NavLink to="/merchandise">Merchandise</NavLink> 

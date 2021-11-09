@@ -32,6 +32,7 @@ function Licenses(props) {
             const {attributes: {name, files, description, price_cents}} = license;
             return(
             <Card
+              wrapperLink="/beats"
               titleText={name}
               preDescription={
               <DescriptionWithTitle 

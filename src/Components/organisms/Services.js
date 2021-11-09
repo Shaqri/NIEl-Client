@@ -8,6 +8,7 @@ function Services() {
     <Container styleClass="services ">
       <ListWithHeader styleClass="service-list" header="Our Services" headerClass="section-header">
         <Card 
+          wrapperLink="/beats"
           icon="fas fa-headphones"
           titleText="Beats"
           description={
@@ -15,13 +16,15 @@ function Services() {
           }
         />
         <Card 
+          wrapperLink="/beats"
           icon="fas fa-puzzle-piece"
           titleText="Beats"
           description={
             <Description text="Acquire beats' licenses or request your custom exclusive beats."/>
           }
         />
-        <Card 
+        <Card
+          wrapperLink="/beats" 
           icon="fas fa-mortar-pestle"
           titleText="Beats"
           description={
@@ -29,6 +32,7 @@ function Services() {
           }
         />
         <Card 
+          wrapperLink="/beats"
           icon="fas fa-tshirt"
           titleText="Beats"
           description={

@@ -1,3 +1,19 @@
+.filters {
+  @include flexCenter(row, flex-start, center);
+  background-color: $black;
+  .header-label {
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
+}
+
+.filter-dropdown {
+  position: relative;
+  .dropdown-button {
+    width: 100%;
+  }
+}
+
 
 .l-list-with-header {
   .list {
@@ -49,5 +65,21 @@
         }
       }
     }
+  }
+}
+.genre-dropdown {
+  display: inline-block;
+  width: 50%;
+  max-width: 300px;
+  border: 1px solid red;
+  position: relative;
+
+  .dropdown-button {
+    width: 100%;
+    background-color: $black;
+  }
+  .dropdown-list {
+    padding: 1em;
+    white-space: nowrap;
   }
 }
