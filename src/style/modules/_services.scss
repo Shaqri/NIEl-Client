@@ -5,6 +5,7 @@
 
 .service-list {
   .card {
+    text-align: center;
     padding: 4em 1em;
     .title {
       color: $blue;
@@ -14,7 +15,7 @@
 }
 
 @media screen and(min-width: 700px) {
-  .service-list {
+  .l-list-with-header.service-list {
     .list {
      
       grid-template-columns: repeat(2, minmax(300px, 750px));

@@ -1,0 +1,109 @@
+.filters {
+  @include flexCenter(row, space-between, center);
+  position: relative;
+  background-color: $black;
+  width: 100%;
+}
+
+.filter-dropdown {
+  z-index: 2;
+  width: 100%;
+  .dropdown-button {
+    width: 100%;
+    border-left: 1px solid $background;
+  }
+}
+
+.attribute-filter {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+
+  .dropdown-button {
+    width: 100%;
+    background-color: $black;
+    border-radius: 0;
+  }
+  .dropdown-list {
+    padding: 1em;
+  }
+}
+
+.genre-dropdown {
+  
+}
+
+.search-dropdown {
+
+  z-index: 3;
+  width: 50px;
+
+  .dropdown-button {
+
+  }
+
+
+    .search-field {
+      @include flexCenter(row, center, center);
+      padding: 3px;
+      border-radius: 10px;
+  
+    }
+    .search-button {
+      padding: 5px;
+      background-color: $black;
+      color: white;
+      border-radius: 0;
+      border: 1px solid white;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    .search-input {
+      border: 1px solid white;
+      width: 200px;
+      padding: 0;
+      padding: 5px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+  
+}
+
+.date-dropdown {
+  .date-button {
+    width: 100%;
+  }
+} 
+
+@media screen and (min-width: 700px) {
+
+  .filter-dropdown {
+    display: flex;
+    >.dropdown-button {
+      max-width: 150px;
+    }
+    > .dropdown-list {
+      display: flex;
+      position: static;
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  .attribute-filter {
+    width: 100%;
+  }
+
+  .search-dropdown {
+    width: auto;
+    .dropdown-button {
+      display: none;
+    }
+    .dropdown-list {
+      display: inline-block;
+      position: static;
+  
+    }
+  }
+}

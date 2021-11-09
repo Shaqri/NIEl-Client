@@ -142,13 +142,18 @@
 }
 
 .l-dropdown {
+  .dropdown-button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+  }
   .dropdown-list {
     position: absolute;
     left: 0;
     right: 0;
     top: 100%;
     background-color: $black;
-    z-index: 2;
     a {
       display: block;
       text-align: center;
@@ -160,7 +165,4 @@
 
 @media screen and (min-width: 700px) {
 
-  .l-dropdown {
-    display: none;
-  }
 }

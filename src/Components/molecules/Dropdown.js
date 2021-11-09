@@ -8,7 +8,7 @@ function Dropdown({children, styleClass, label, icon}) {
   };
   return(
     <div className={`l-dropdown ${styleClass}`}>
-      <Button styleClass="header-button dropdown-button" text={label} icon={icon} handleClick={handleDropdown} />
+      <Button styleClass="dropdown-button" text={label} icon={icon} handleClick={handleDropdown} />
       
       <ul ref={dropdownRef} className="dropdown-list hidden">
         {children}

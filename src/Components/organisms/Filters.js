@@ -2,6 +2,7 @@ import Dropdown from '../molecules/Dropdown';
 import {useEffect, useState} from 'react';
 import {useNavigate } from 'react-router-dom';
 import useQuery from '../../customHooks/useQuery';
+import Button from '../atoms/Button';
 
 function Filters ({allGenres, getGenres, getBeats}) {
 
@@ -48,8 +49,9 @@ function Filters ({allGenres, getGenres, getBeats}) {
 
 
   return(
-    <Dropdown label="Filters" styleClass="filter-dropdown"> 
-        <Dropdown styleClass="genre-dropdown" label="Genres" >
+    <div className="filters">
+      <Dropdown label="Filters" styleClass="filter-dropdown"> 
+        <Dropdown styleClass="attribute-filter genre-dropdown" label="Genres" >
           { allGenres &&
             allGenres.map((genre) => {
               const {attributes: {name, slug}} = genre;
@@ -69,8 +71,19 @@ function Filters ({allGenres, getGenres, getBeats}) {
           }
         
         </Dropdown>
+        <Dropdown styleClass="attribute-filter date-dropdown" label="Sort By">
+          <Button styleClass="date-button" text="Oldest"/>
+          <Button styleClass="date-button" text="Newest"/>
+        </Dropdown>
 
-    </Dropdown>
+      </Dropdown>
+      <Dropdown styleClass="search-dropdown" icon="fas fa-search">
+        <div className="search-field">
+          <input type="text" className="search-input" placeholder="Search..." />
+          <Button icon="fas fa-search" styleClass="search-button" />
+        </div>
+      </Dropdown>
+    </div>
   )
 };
 

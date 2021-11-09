@@ -9,10 +9,6 @@
   display: none;
 }
 
-.nav-dropdown {
- 
-}
-
 .nav-logo {
   width: 100px;
   height: 50px;
@@ -22,8 +18,8 @@
   display: none;
 }
 
-.nav-genre {
-  
+.nav-dropdown {
+  z-index: 4;
 }
 
 @media screen and (min-width: 700px) {
@@ -37,5 +33,9 @@
 
   .nav-login {
     display: inline-block;
+  }
+
+  .nav-dropdown {
+    display: none;
   }
 }
