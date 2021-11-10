@@ -3,6 +3,7 @@
   border: none;
   color: white;
   font-size: 1.1em;
+  cursor: pointer;
 }
 
 .navbar {
@@ -19,7 +20,23 @@
 }
 
 .nav-dropdown {
-  z-index: 4;
+  z-index: 2;
+}
+
+.user-dropdown {
+  text-align: right;
+  min-width: 80px;
+  .dropdown-label {
+    text-align: center;
+  }
+  .dropdown-list {
+    box-shadow: 0px 1px 1px $light;
+  }
+  .session-button {
+    margin-top: 1em;
+    padding: 0 5px 0 0;
+    color: $light;
+  }
 }
 
 @media screen and (min-width: 700px) {

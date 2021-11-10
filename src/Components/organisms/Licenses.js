@@ -42,10 +42,10 @@ function Licenses(props) {
               />
               }
               description={
-                <Description text={splitTextByComma(description)}/>
+                <Description styleClass="card-description" text={splitTextByComma(description)}/>
               }
               footer={
-                <Footer text={`$${price_cents}USD`}/>
+                <Footer styleClass="card-footer" text={`$${price_cents}USD`}/>
               }
             />)
           })

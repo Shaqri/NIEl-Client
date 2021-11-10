@@ -6,7 +6,7 @@
 }
 
 .filter-dropdown {
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   .dropdown-button {
     width: 100%;
@@ -34,9 +34,19 @@
   
 }
 
+.date-dropdown {
+  .date-button {
+    border-radius: 0;
+    background-color: $black;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+  }
+}
+
 .search-dropdown {
 
-  z-index: 3;
+  z-index: 1;
   width: 50px;
 
   .dropdown-button {

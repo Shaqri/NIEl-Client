@@ -15,7 +15,7 @@ function Card(props) {
             <i className={`${icon} icon`} />
           }
           <div className="details">
-            <Title text={titleText}/>
+            <Title styleClass="card-title" text={titleText}/>
             {preDescription &&
               preDescription
             }

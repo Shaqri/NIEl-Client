@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {setUser} from '../../actions/index';
 import {useNavigate, NavLink} from 'react-router-dom';
 import Brand from '../atoms/Brand';
+import HoverDropdown from '../molecules/HoverDropdown';
 
 function AppNav({user, setUser}) {
 
@@ -15,9 +16,25 @@ function AppNav({user, setUser}) {
 
   const renderUserSession = () => {
     if(user) return(
-      <Session>
-        <Button styleClass="header-button" text="Log Out" handleClick={handleLogOut}/>
-      </Session>
+      <HoverDropdown
+      styleClass="user-dropdown"
+      labelText={user.name} 
+      list={
+        <>
+          {user.admin && 
+            <>
+              <li>Upload</li>
+              <li>Activity</li>
+            </>
+          }
+          <li>My Beats</li>
+        </>
+      }
+      >
+        <Session>
+          <Button styleClass="session-button header-button" text="Log Out" handleClick={handleLogOut}/>
+        </Session>
+      </HoverDropdown>
     );
 
     return(

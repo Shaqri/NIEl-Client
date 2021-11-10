@@ -22,7 +22,8 @@ function Beats (props) {
     
       <Filters allGenres={allGenres} getGenres={getGenres} getBeats={getBeats}/>
       
-      <ListWithHeader>
+      <ListWithHeader 
+      styleClass="beats-list">
       {currentBeats &&
   currentBeats.map((beat) => {
     const {attributes: {name, bpm, imageFile}} = beat;
