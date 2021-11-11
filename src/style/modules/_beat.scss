@@ -4,6 +4,7 @@
   .list {
     margin: 0 auto;
     border: 1px solid green;
+    max-width: 1500px;
     grid-template-columns:  repeat(auto-fill, minmax(200px, 250px));
     padding: 1em;
   }

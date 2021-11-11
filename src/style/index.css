@@ -304,11 +304,11 @@ a {
 }
 
 .l-hover-dropdown .dropdown-list {
-  padding: .5em;
+  padding: .7em 0;
   background-color: black;
   position: absolute;
-  left: -.5em;
-  right: -.5em;
+  left: -1.5em;
+  right: -1.5em;
   top: 100%;
   z-index: 3;
 }
@@ -318,8 +318,17 @@ a {
 }
 
 .l-hover-dropdown .dropdown-list ul li {
-  padding: 5px 0;
-  border-bottom: 1px solid #323232;
+  padding: 10px 0;
+}
+
+.l-hover-dropdown .dropdown-list ul li:hover {
+  border-bottom: 1px solid #191919;
+}
+
+@media screen and (min-width: 1000px) {
+  #header {
+    padding: 0 4rem;
+  }
 }
 
 .title-header {
@@ -568,6 +577,7 @@ a {
 .beats-list .list {
   margin: 0 auto;
   border: 1px solid green;
+  max-width: 1500px;
   -ms-grid-columns: (minmax(200px, 250px))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
   padding: 1em;
@@ -651,6 +661,8 @@ a {
   position: relative;
   background-color: #191919;
   width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .filter-dropdown {
@@ -700,32 +712,29 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 3px;
-  border-radius: 10px;
 }
 
 .search-dropdown .search-button {
-  padding: 5px;
+  padding: 1px 5px;
   background-color: #191919;
   color: white;
   border-radius: 0;
-  border: 1px solid white;
+  border: 1px solid #d9d9d9;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
 .search-dropdown .search-input {
-  border: 1px solid white;
+  border: 1px solid #d9d9d9;
   width: 200px;
-  padding: 0;
-  padding: 5px;
+  padding: 4px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }

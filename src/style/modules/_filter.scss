@@ -3,6 +3,8 @@
   position: relative;
   background-color: $black;
   width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .filter-dropdown {
@@ -55,25 +57,21 @@
 
 
     .search-field {
-      @include flexCenter(row, center, center);
-      padding: 3px;
-      border-radius: 10px;
-  
+      @include flexCenter(row, center, stretch);
     }
     .search-button {
-      padding: 5px;
+      padding: 1px 5px;
       background-color: $black;
       color: white;
       border-radius: 0;
-      border: 1px solid white;
+      border: 1px solid $light ;
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
     }
     .search-input {
-      border: 1px solid white;
+      border: 1px solid $light;
       width: 200px;
-      padding: 0;
-      padding: 5px;
+      padding: 4px;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
     }

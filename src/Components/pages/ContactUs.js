@@ -1,8 +1,10 @@
+import ContainerWithNavbar from '../templates/ContainerWithNavbar';
+
 function ContactUs() {
   return(
-    <div>
+    <ContainerWithNavbar>
       contactus 
-    </div>
+    </ContainerWithNavbar>
   );
 };
 

@@ -23,7 +23,7 @@ function AppNav({user, setUser}) {
         <>
           {user.admin && 
             <>
-              <li>Upload</li>
+              <li><NavLink to="/beats/new">Upload</NavLink></li>
               <li>Activity</li>
             </>
           }
@@ -49,7 +49,7 @@ function AppNav({user, setUser}) {
   return(
     <header id="header">
       <Dropdown styleClass="nav-dropdown" icon="fas fa-bars">
-        <NavLink to="/home" >Home</NavLink> 
+        <NavLink to="/" >Home</NavLink> 
         <NavLink to="/beats">Beats</NavLink>  
         <NavLink to="/merchandise">Merchandise</NavLink> 
         <NavLink to="/contact_us">Contact Us</NavLink> 
@@ -57,7 +57,7 @@ function AppNav({user, setUser}) {
 
       <Brand styleClass="nav-logo"/>
       <HorizontalBar styleClass="navbar">
-        <NavLink to="/home" >Home</NavLink> 
+        <NavLink to="/" end >Home</NavLink> 
         <NavLink to="/beats">Beats</NavLink>  
         <NavLink to="/merchandise">Merchandise</NavLink> 
         <NavLink to="/contact_us">Contact Us</NavLink> 

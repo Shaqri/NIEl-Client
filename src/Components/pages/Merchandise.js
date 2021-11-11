@@ -1,8 +1,10 @@
+import ContainerWithNavbar from "../templates/ContainerWithNavbar";
+
 function Merchandise() {
   return(
-    <div>
+    <ContainerWithNavbar>
       merchandise
-    </div>
+    </ContainerWithNavbar>
   );
 };
 
