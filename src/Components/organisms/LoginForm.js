@@ -26,7 +26,7 @@ function LoginForm({login, user}) {
   return(
     <>
       <TitleHeader text="Log In" />
-      <Form button="Log In" styleClass="session-form" handleSubmit={handleSubmit}>
+      <Form buttonText="Log In" styleClass="session-form" handleSubmit={handleSubmit}>
         <TextInput value={email} placeholder="Email" handleChange={setEmail}/>
         <TextInput value={password} hideText placeholder="Password" handleChange={setPassword} />
       </Form>

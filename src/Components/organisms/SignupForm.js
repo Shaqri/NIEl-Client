@@ -33,7 +33,7 @@ function SignupForm({signUp, user}) {
   return(
     <>
       <TitleHeader text="Sign up"/>
-      <Form button="Sign Up" styleClass="session-form" handleSubmit={handleSubmit}>
+      <Form buttonText="Sign Up" styleClass="session-form" handleSubmit={handleSubmit}>
         <TextInput placeholder="Name" value={name} handleChange={setName} />
         <TextInput placeholder="Email" value={email} handleChange={setEmail} />
         <TextInput hideText placeholder="Password" value={password} handleChange={setPassword} />

@@ -54,5 +54,78 @@
   }
 }
 
+.new-beat-container {
+  min-height: auto;
+  
+  padding-top: 1rem;
+  .new-beat-form {
+    display: block;
+    max-width: 600px;
+    border: 1px solid green;
+    .file-field {
+      display: inline-block;
+      &:hover .field-label {
+        transform: scaleY(1);
+      }
+
+      .image-preview-container {
+        width: 200px;
+        height: 150px;
+      }
+
+      .icon-preview-container {
+        border: 1px solid green;
+        .icon {
+          border: 1px solid red;
+          font-size: 69px;
+        }
+      }
+
+      .file-input {
+        display: none;
+      }
+      .field-label {
+        @include absoluteFullSize();
+        @include flexCenter(row, center, center);
+        background-color: $light-black;
+        transform: scaleY(0);
+        text-align: center;
+      }
+    }
+
+    
+    .form-field {
+   
+      position: relative;
+     
+      margin: .5em;
+      .input {
+        padding: 0.7em;
+      }
+    }
+
+    .top-fields {
+      width: 100%;
+    }
+
+    .name-field {
+    }
+
+    .genres-field {
+      color: black;
+    }
+
+    .bpm-field {
+      width: 30%;
+      border: 1px solid red;
+    }
+
+    .mp3-field, .zip-file, .wav-file {
+      border: 1px solid blue;
+      width:fit-content;
+    }
+  }
+}
+
 @media screen and (min-width: 700px) {
 }

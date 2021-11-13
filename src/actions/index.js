@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {usersURL, authURL, genresURL, 
-  tracksURL, licensesURL} from '../API';
+  tracksURL, licensesURL, directUploadURL} from '../API';
 
 const SET_USER = 'SET_USER';
 const SET_ALL_GENRES = 'SET_ALL';
@@ -84,11 +84,18 @@ const getLicenses =  () => {
   }
 };
 
+const createPresignedURL = (file) => {
+  return async (dispatch) => {
+    const response = axios.post(directUploadURL, {})
+  }
+};
+
 export {
   createUser,
   authenticateUser,
   setUser,
   getGenres,
   getBeats,
-  getLicenses
+  getLicenses,
+  createPresignedURL
 }

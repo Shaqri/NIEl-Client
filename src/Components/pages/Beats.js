@@ -1,6 +1,6 @@
 import ContainerWithNavbar from '../templates/ContainerWithNavbar';
 import {connect} from 'react-redux';
-import { getBeats, getGenres } from '../../actions/index';
+import { getBeats, getGenres, createPresignedURL } from '../../actions/index';
 import Filters from '../organisms/Filters';
 import BeatsList from '../organisms/BeatsList';
 import Beat from '../organisms/Beat';
@@ -15,7 +15,7 @@ function Beats (props) {
       <Filters allGenres={allGenres} getGenres={getGenres} getBeats={getBeats}/>
       
       <Routes>
-        <Route path="new" element={<NewBeat />} />
+        <Route path="new" element={<NewBeat allGenres={allGenres} createPresignedURL={createPresignedURL} />} />
         <Route path=":id" element={<Beat />} />
         <Route index element={<BeatsList beats={currentBeats} />} />
       </Routes>

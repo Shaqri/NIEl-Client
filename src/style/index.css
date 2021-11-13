@@ -125,6 +125,12 @@ a {
   z-index: 2;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .border {
   border: 1px solid red;
 }
@@ -148,7 +154,7 @@ a {
 
 .image-container {
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 
 .horizontal-list {
@@ -225,6 +231,54 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3em;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  display: block;
+  padding: 1em;
+  margin-bottom: 5px;
+  border: 2px solid #323232;
+  border-radius: 5px;
+}
+
+.form input:focus {
+  border: 2px solid #5bc2d6;
+}
+
+.form button {
+  font-size: 1.3em;
+  padding: .5em 1em;
+  border: 2px solid #5bc2d6;
+  border-radius: 30px;
+  margin: 1em 0;
+  -webkit-transition: 100ms ease-out;
+  transition: 100ms ease-out;
+}
+
+.form button:hover {
+  border: 2px solid #61358c;
 }
 
 .l-list-with-header {
@@ -642,6 +696,98 @@ a {
   border: 1px solid white;
   border-radius: 2px;
   padding: 5px;
+}
+
+.new-beat-container {
+  min-height: auto;
+  padding-top: 1rem;
+}
+
+.new-beat-container .new-beat-form {
+  display: block;
+  max-width: 600px;
+  border: 1px solid green;
+}
+
+.new-beat-container .new-beat-form .file-field {
+  display: inline-block;
+}
+
+.new-beat-container .new-beat-form .file-field:hover .field-label {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.new-beat-container .new-beat-form .file-field .image-preview-container {
+  width: 200px;
+  height: 150px;
+}
+
+.new-beat-container .new-beat-form .file-field .icon-preview-container {
+  border: 1px solid green;
+}
+
+.new-beat-container .new-beat-form .file-field .icon-preview-container .icon {
+  border: 1px solid red;
+  font-size: 69px;
+}
+
+.new-beat-container .new-beat-form .file-field .file-input {
+  display: none;
+}
+
+.new-beat-container .new-beat-form .file-field .field-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: rgba(25, 25, 25, 0.4);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  text-align: center;
+}
+
+.new-beat-container .new-beat-form .form-field {
+  position: relative;
+  margin: .5em;
+}
+
+.new-beat-container .new-beat-form .form-field .input {
+  padding: 0.7em;
+}
+
+.new-beat-container .new-beat-form .top-fields {
+  width: 100%;
+}
+
+.new-beat-container .new-beat-form .genres-field {
+  color: black;
+}
+
+.new-beat-container .new-beat-form .bpm-field {
+  width: 30%;
+  border: 1px solid red;
+}
+
+.new-beat-container .new-beat-form .mp3-field, .new-beat-container .new-beat-form .zip-file, .new-beat-container .new-beat-form .wav-file {
+  border: 1px solid blue;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .filters {
