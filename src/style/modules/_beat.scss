@@ -56,29 +56,37 @@
 
 .new-beat-container {
   min-height: auto;
+
+  .title-header {
+    font-size: 3em;
+    padding: 1rem;
+  }
   
   padding-top: 1rem;
   .new-beat-form {
+    position: relative;
+    padding: 1rem;
     display: block;
-    max-width: 600px;
+    max-width: 750px;
     border: 1px solid green;
     .file-field {
+      text-align: center;
       display: inline-block;
       &:hover .field-label {
         transform: scaleY(1);
       }
 
       .image-preview-container {
-        width: 200px;
-        height: 150px;
+        width: 13em;
+        height: 10em;
       }
 
       .icon-preview-container {
-        border: 1px solid green;
+        margin-bottom: .5rem;
         .icon {
-          border: 1px solid red;
           font-size: 69px;
         }
+
       }
 
       .file-input {
@@ -89,14 +97,22 @@
         @include flexCenter(row, center, center);
         background-color: $light-black;
         transform: scaleY(0);
-        text-align: center;
+      }
+    
+
+      .filename {
+        display: inline-block;
+    
+        width: 100%;
+        font-size: 1.1em;
       }
     }
 
     
     .form-field {
-   
-      position: relative;
+      .field {
+        position: relative;
+      }
      
       margin: .5em;
       .input {
@@ -117,15 +133,35 @@
 
     .bpm-field {
       width: 30%;
-      border: 1px solid red;
     }
 
-    .mp3-field, .zip-file, .wav-file {
-      border: 1px solid blue;
+    .mp3-file, .zip-file, .wav-file {
       width:fit-content;
     }
+
+    .submit-form-button {
+      border: 8px solid $blue;
+      
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      margin: 0;
+      transition: 200ms cubic-bezier(0.23, 1, 0.320, 1);
+      &:hover {
+        border: 5px solid $blue;
+        box-shadow: 0px 0px 10px $purple;
+      }
+    }
   }
+
+ 
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1400px) {
+
+  .new-beat-container {
+    .new-beat-form {
+      
+    }
+  }
 }

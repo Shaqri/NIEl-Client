@@ -4,17 +4,20 @@ import styled from 'styled-components';
 
 
 const ProgressBar = styled.div`
-  width: ${props => props.progress};
+  width: ${props => props.progress}%;
   height: 10px;
   background-color: ${props => props.barColor};
 `
 
 function FileFieldWithProgressBar(props) {
-  const {styleClass, preview, input, labelId, labelText} = props;
+  const {styleClass, preview, input, filename, labelId, labelText} = props;
 
-  const [progress, setProgress] = useState("50%");
+  const [progress, setProgress] = useState(0);
   const [barColor, setBarColor] = useState("#61358c");
-
+  
+  const formatFilename = (name) => {
+    return name.length > 6 ? `${name.slice(0, 6)}...` : name
+  };
 
   return(
       <FormField
@@ -23,14 +26,15 @@ function FileFieldWithProgressBar(props) {
           preview
         }
         input={
-          input
+          input(setProgress)
         }
-        labelId="mp3"
-        labelText="Upload Mp3"
+        labelId={labelId}
+        labelText={labelText}
       >
-      {(progress !== "0") &&
+      {(progress !== 0) &&
           <ProgressBar barColor={barColor} progress={progress} />
       }
+      <span className="filename">{formatFilename(filename)}</span>
       </FormField>
 
   );

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {usersURL, authURL, genresURL, 
-  tracksURL, licensesURL, directUploadURL} from '../API';
+  tracksURL, licensesURL} from '../API';
 
 const SET_USER = 'SET_USER';
 const SET_ALL_GENRES = 'SET_ALL';
@@ -23,6 +23,7 @@ const authenticateUser = (data) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(authURL, data);
+      console.log(response.data)
       dispatch(setUser(response.data.data.attributes));
     }catch(error) {
       console.log(error.response.data)
@@ -84,12 +85,6 @@ const getLicenses =  () => {
   }
 };
 
-const createPresignedURL = (file) => {
-  return async (dispatch) => {
-    const response = axios.post(directUploadURL, {})
-  }
-};
-
 export {
   createUser,
   authenticateUser,
@@ -97,5 +92,4 @@ export {
   getGenres,
   getBeats,
   getLicenses,
-  createPresignedURL
 }

@@ -3,13 +3,18 @@ function FormField(props) {
      input, labelText, labelId, children} = props;
   return(
     <div className={`form-field ${styleClass}`}>
-      {preview &&
-        preview
-      }
+      <div className="field">
+        {preview &&
+          preview
+        }
+        <label className="field-label" htmlFor={labelId}>{labelText}</label>
+        {input}
+      </div>
       
-      <label className="field-label" htmlFor={labelId}>{labelText}</label>
-      {input}
-      {children}
+      <div className="metadata">
+        {children}
+      </div>
+      
     </div>
   )
 };

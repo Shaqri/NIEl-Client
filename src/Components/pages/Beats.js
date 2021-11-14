@@ -1,21 +1,23 @@
 import ContainerWithNavbar from '../templates/ContainerWithNavbar';
 import {connect} from 'react-redux';
-import { getBeats, getGenres, createPresignedURL } from '../../actions/index';
+import { getBeats, getGenres } from '../../actions/index';
 import Filters from '../organisms/Filters';
 import BeatsList from '../organisms/BeatsList';
 import Beat from '../organisms/Beat';
 import NewBeat from '../organisms/NewBeat';
 import { Routes, Route } from "react-router-dom";
 
+
 function Beats (props) {
   const {currentBeats, getBeats,
-    allGenres, getGenres} = props; 
+    allGenres, getGenres, userAuthToken} = props; 
+ 
   return(
     <ContainerWithNavbar styleClass="space-nav-top page-container border">
       <Filters allGenres={allGenres} getGenres={getGenres} getBeats={getBeats}/>
       
       <Routes>
-        <Route path="new" element={<NewBeat allGenres={allGenres} createPresignedURL={createPresignedURL} />} />
+        <Route path="new" element={<NewBeat allGenres={allGenres} authToken={userAuthToken} />} />
         <Route path=":id" element={<Beat />} />
         <Route index element={<BeatsList beats={currentBeats} />} />
       </Routes>
@@ -28,7 +30,8 @@ function Beats (props) {
 const mapStateToProps = (state) => ({
   currentBeats: state.beat.currentList,
   currentGenre: state.genre.genreFilter,
-  allGenres: state.genre.all
+  allGenres: state.genre.all,
+  userAuthToken: state.user.current.authToken
 });
 
 const mapDispatchToProps = (dispatch) => ({

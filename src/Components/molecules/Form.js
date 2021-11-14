@@ -4,7 +4,7 @@ function Form({children, styleClass, handleSubmit, buttonText}) {
   return(
     <form className={`form ${styleClass}`}>
       {children}
-      <Button handleClick={handleSubmit} text={buttonText}/>
+      <Button styleClass="submit-form-button" handleClick={handleSubmit} text={buttonText}/>
     </form>
   );
 }
